@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晴晴 Sunny — Uber Eats 頂尖策略顧問</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root { --ue-green: #06C167; }
+        body { font-family: 'Noto Sans TC', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+
+        /* 動態液體背景 */
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+        }
+        .blob {
+            position: absolute; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(6, 193, 103, 0.15) 0%, transparent 70%);
+            filter: blur(80px); animation: move 20s infinite alternate;
+        }
+        @keyframes move { from { transform: translate(-10%, -10%); } to { transform: translate(20%, 20%); } }
+
+        /* 高級玻璃特效 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--ue-green);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(6, 193, 103, 0.2);
+        }
+
+        /* 呼吸字體特效 */
+        .hero-title {
+            background: linear-gradient(to bottom, #fff 30%, #888 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Line 呼吸燈 */
+        .line-float {
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(6, 199, 85, 0.4);
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    </style>
+</head>
+<body>
+    <div class="mesh-bg">
+        <div class="blob" style="top: 10%; left: -10%;"></div>
+        <div class="blob" style="bottom: 10%; right: -10%; animation-delay: -5s;"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 py-6 px-10 flex justify-between items-center backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-[#06C167] rounded-full animate-pulse"></div>
+            <span class="font-bold tracking-tighter text-xl">SUNNY STRATEGY</span>
+        </div>
+        <a href="https://line.me/ti/p/xd__vmNemf" target="_blank" class="border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all font-bold">CONTACT</a>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-[#06C167] font-bold tracking-[0.3em] mb-6 text-sm">中彰花區域專屬代表</h2>
+                <h1 class="hero-title text-7xl md:text-9xl font-bold leading-none mb-8 serif italic">
+                    Beyond <br> <span class="text-white">Delivery.</span>
+                </h1>
+                <p class="text-gray-400 text-xl mb-12 max-w-sm leading-relaxed">
+                    我不只是業務。我運用數據美學與市場心理，協助在地餐飲品牌實現數位躍遷。
+                </p>
+                <div class="flex items-center gap-8">
+                    <a href="https://line.me/ti/p/xd__vmNemf" target="_blank" class="bg-[#06C167] text-black px-10 py-5 rounded-full font-bold text-lg hover:scale-110 transition-transform">立即諮詢</a>
+                    <div class="text-xs tracking-widest text-gray-500 uppercase border-l border-white/20 pl-6">
+                        台中 | 彰化 | 花蓮<br>官方認證顧問
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group" data-aos="fade-left">
+                <div class="absolute -inset-1 bg-[#06C167] rounded-[45px] blur opacity-25 group-hover:opacity-50 transition"></div>
+                <div class="relative glass-card overflow-hidden" style="height: 550px;">
+                    <img src="https://i.postimg.cc/QKhwt7wM/Screenshot-20260506-003930-LINE-2.jpg" alt="Sunny" class="w-full h-full object-cover">
+                    <div class="absolute bottom-10 left-10">
+                        <p class="text-4xl font-bold italic serif">Sunny.</p>
+                        <p class="text-[#06C167] font-bold tracking-widest text-xs uppercase">Strategy Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+            <div class="glass-card p-12 text-center" data-aos="fade-up">
+                <p class="text-5xl font-bold text-[#06C167] mb-4 tracking-tighter">100+</p>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">合作店家案例</p>
+            </div>
+            <div class="glass-card p-12 text-center" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-5xl font-bold text-[#06C167] mb-4 tracking-tighter">台中/彰化/花蓮</p>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">深耕區域服務</p>
+            </div>
+            <div class="glass-card p-12 text-center" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-5xl font-bold text-[#06C167] mb-4 tracking-tighter">24H</p>
+                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs">快速顧問響應</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-10 right-10 z-[100] flex flex-col gap-6">
+        <a href="https://www.instagram.com/sunny.07.04/" target="_blank" class="w-14 h-14 glass-card flex items-center justify-center rounded-full text-white hover:text-pink-500 transition-colors">
+            <i class="fa-brands fa-instagram text-2xl"></i>
+        </a>
+        <a href="https://line.me/ti/p/xd__vmNemf" target="_blank" class="w-20 h-20 bg-[#06C755] rounded-full flex items-center justify-center text-white line-float shadow-2xl">
+            <i class="fa-brands fa-line text-4xl"></i>
+        </a>
+    </div>
+
+    <footer class="py-20 border-t border-white/5 text-center">
+        <p class="serif italic text-3xl mb-8">Ready to grow?</p>
+        <div class="flex justify-center gap-10 mb-12">
+            <a href="tel:0902697331" class="text-gray-500 hover:text-white transition">0902-697-331</a>
+            <a href="https://www.instagram.com/sunny.07.04/" class="text-gray-500 hover:text-white transition">INSTAGRAM</a>
+        </div>
+        <p class="text-[10px] tracking-[0.5em] text-gray-700">© 2026 SUNNY CONSULTING. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
