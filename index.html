@@ -365,7 +365,8 @@
                     我不只是業務。我運用 <span class="text-[#06C167] font-bold">數據美學</span> 與 <span class="text-[#06C167] font-bold">市場心理</span>，協助在地餐飲品牌實現數位躍遷。
                 </p>
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
-                    <a href="https://forms.gle/eLQfx53Gs38jpfkAA" target="_blank" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center">立即免費諮詢</a>
+                    <a href="https://forms.gle/eLQfx53Gs38jpfkAA" target="_blank" id="form-btn" class="btn-primary w-full sm:w-auto text-center flex items-center justify-center">立即免費諮詢</a>
+
 
                     <div class="text-xs tracking-widest text-gray-500 uppercase border-l-2 border-[#06C167] pl-4">
                         台中 | 彰化 | 花蓮<br><span class="text-[#06C167]">✓ 官方認證顧問</span>
@@ -820,13 +821,7 @@
             contactModal.classList.add('active');
         });
 
-        primaryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (btn.classList.contains('open-contact-modal') === false) {
-                    window.open('https://line.me/ti/p/xd__vmNemf', '_blank');
-                }
-            });
-        });
+        
 
         closeModalBtns.forEach(btn => {
             btn.addEventListener('click', () => {
