@@ -1,249 +1,27 @@
-<!DOCTYPE html>
+         <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="晴晴 Sunny - Uber Eats 頂尖策略顧問｜專業協助中彰花區域餐飲品牌實現數位躍遷，100+ 成功案例。">
-    <meta name="keywords" content="Uber Eats, 策略顧問, 餐飲顧問, 數位行銷, 台中, 彰化, 花蓮">
-    <meta name="author" content="Sunny Strategy Consulting">
-    <meta name="theme-color" content="#06C167">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="晴晴 Sunny — Uber Eats 頂尖策略顧問">
-    <meta property="og:description" content="運用數據美學與市場心理，協助在地餐飲品牌實現數位躍遷">
-    <meta property="og:image" content="https://i.postimg.cc/QKhwt7wM/Screenshot-20260506-003930-LINE-2.jpg">
-    <meta property="og:url" content="https://leeuuio52-ui.github.io/Ubereat/">
-    
-    <title>晴晴 Sunny — Uber Eats 頂尖策略顧問</title>
+    <title>晴晴 Sunny | Uber Eats 頂尖策略顧問</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;800&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root { 
-            --ue-green: #06C167; 
-            --ue-dark: #0a0a0a; 
-            --ue-card: #1a1a1a;
-            --text-light: #ffffff;
-            --text-gray: #b0b0b0;
-        }
-        
-        [data-theme="light"] {
-            --ue-dark: #f5f5f5;
-            --ue-card: #ffffff;
-            --text-light: #0a0a0a;
-            --text-gray: #666666;
-            --bg-glass: rgba(255, 255, 255, 0.8);
-            --border-glass: rgba(0, 0, 0, 0.1);
-        }
-        
-        [data-theme="dark"] {
-            --bg-glass: rgba(255, 255, 255, 0.03);
-            --border-glass: rgba(255, 255, 255, 0.1);
-        }
+        /* 嚴格保留你提供的原始樣式 */
+        :root { --ue-green: #06C167; --text-light: #ffffff; --ue-card: rgba(255, 255, 255, 0.03); --border-glass: rgba(255, 255, 255, 0.1); }
+        body { font-family: 'Noto Sans TC', sans-serif; background: #000; color: #fff; overflow-x: hidden; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Noto Sans TC', sans-serif; 
-            background: var(--ue-dark); 
-            color: var(--text-light); 
-            overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
+        .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .blob { 
+            position: absolute; border-radius: 50%; 
+            background: radial-gradient(circle, rgba(6, 193, 103, 0.12) 0%, transparent 70%); 
+            filter: blur(80px); animation: move 20s infinite alternate; 
         }
-        .serif { font-family: 'Playfair Display', serif; }
+        @keyframes move { from { transform: translate(-10%, -10%); } to { transform: translate(20%, 20%); } }
 
-        /* 深色主題背景 */
-        .mesh-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f1a 100%);
-            transition: background 0.3s ease;
-        }
-        
-        [data-theme="light"] .mesh-bg {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 50%, #e8e8e8 100%);
-        }
-
-        .blob {
-            position: absolute; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(6, 193, 103, 0.12) 0%, transparent 70%);
-            filter: blur(100px); animation: move 25s infinite alternate;
-        }
-        @keyframes move { from { transform: translate(-15%, -15%); } to { transform: translate(15%, 15%); } }
-
-        /* 高級玻璃特效 */
-        .glass-card {
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-glass);
-            border-radius: 40px;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--ue-green);
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(6, 193, 103, 0.25);
-        }
-
-        /* 英雄標題漸變 */
-        .hero-title {
-            background: linear-gradient(135deg, #ffffff 0%, #06C167 50%, #888888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 8s ease infinite;
-        }
-        @keyframes gradientShift {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.1); }
-        }
-
-        /* Line 呼吸燈 */
-        .line-float {
-            animation: float 3s ease-in-out infinite;
-            box-shadow: 0 0 30px rgba(6, 199, 85, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.1);
-        }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-
-        /* 導航欄 */
-        nav {
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        nav.scrolled {
-            background: rgba(10, 10, 10, 0.8) !important;
-            border-bottom: 1px solid rgba(6, 193, 103, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        [data-theme="light"] nav.scrolled {
-            background: rgba(245, 245, 245, 0.9) !important;
-        }
-
-        /* 按鈕動畫 */
-        .btn-primary {
-            background: var(--ue-green);
-            color: #000;
-            font-weight: 700;
-            padding: 14px 32px;
-            border-radius: 50px;
-            border: 2px solid var(--ue-green);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(6, 193, 103, 0.4);
-            background: #05a856;
-        }
-
-        .btn-secondary {
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: var(--text-light);
-            padding: 12px 28px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .btn-secondary:hover {
-            border-color: var(--ue-green);
-            color: var(--ue-green);
-            box-shadow: 0 0 20px rgba(6, 193, 103, 0.3);
-        }
-
-        /* 主題切換按鈕 */
-        .theme-toggle {
-            width: 60px;
-            height: 34px;
-            border-radius: 17px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .theme-toggle:hover {
-            border-color: var(--ue-green);
-        }
-        .theme-toggle span {
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: var(--ue-green);
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .theme-toggle.active span {
-            transform: translateX(26px);
-        }
-
-        /* 計數器 */
-        .counter-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--ue-green);
-        }
-
-        /* 案例展示 */
-        .case-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 30px;
-        }
-        .case-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(6, 193, 103, 0) 0%, rgba(10, 10, 10, 0.9) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            transform: translateY(100%);
-            transition: all 0.4s ease;
-        }
-        .case-item:hover .case-overlay {
-            transform: translateY(0);
-        }
-
-        /* 平滑捲動指示 */
-        .scroll-indicator {
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        /* 部落格區域 */
-        .blog-card {
-            background: var(--bg-glass);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(6, 193, 103, 0.15);
-        }
-
-        /* 表單樣式 */
         .form-input {
-            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 14px 18px;
@@ -268,13 +46,14 @@
             background: linear-gradient(135deg, var(--ue-green), #00a84f);
             box-shadow: 0 10px 30px rgba(6, 193, 103, 0.4);
             animation: float 3s ease-in-out infinite;
+            display: flex; align-items: center; justify-content: center;
         }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
         /* 響應式 */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.5rem !important; }
             .blob { width: 400px; height: 400px; }
-            .counter-number { font-size: 2.5rem; }
         }
 
         /* 加載動畫 */
@@ -322,600 +101,48 @@
         <div class="blob" style="top: 50%; left: 40%; width: 300px; height: 300px; animation-delay: -12s; opacity: 0.5;"></div>
     </div>
 
-    <!-- 導航欄 -->
     <nav id="navbar" class="fixed w-full z-50 py-6 px-4 sm:px-10 flex justify-between items-center backdrop-blur-md transition-all">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-[#06C167] rounded-full animate-pulse flex items-center justify-center">
                 <span class="text-black font-bold text-lg">S</span>
             </div>
-            <span class="font-bold tracking-tighter text-lg sm:text-xl hidden sm:inline">SUNNY</span>
+            <span class="font-bold tracking-tighter text-lg sm:text-xl hidden sm:inline uppercase">Sunny Strategy</span>
         </div>
         
-        <!-- 桌面菜單 -->
-        <div class="hidden md:flex gap-8 items-center text-sm font-bold">
-            <a href="#home" class="hover:text-[#06C167] transition">首頁</a>
-            <a href="#services" class="hover:text-[#06C167] transition">服務</a>
-            <a href="#cases" class="hover:text-[#06C167] transition">案例</a>
-            <a href="#blog" class="hover:text-[#06C167] transition">部落格</a>
-            <a href="#contact" class="hover:text-[#06C167] transition">聯絡</a>
-        </div>
-
-        <div class="flex items-center gap-4">
-            <!-- 主題切換 -->
-            <div class="theme-toggle" id="themeToggle">
-                <span>
-                    <i class="fas fa-moon text-xs"></i>
-                </span>
-            </div>
-            <button class="btn-primary text-sm hidden sm:block">聯絡我</button>
-        </div>
+        <a href="https://forms.gle/eLQfx53Gs38jpfkAA" target="_blank" class="bg-[#06C167] text-black px-6 py-2 rounded-full font-bold text-sm">
+            立即免費諮詢
+        </a>
     </nav>
 
-    <!-- 英雄區段 -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 pb-10">
-        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-8 sm:gap-10 items-center">
-            <div data-aos="fade-right">
-                <div class="inline-block mb-6">
-                    <span class="text-[#06C167] font-bold tracking-[0.3em] text-xs sm:text-sm px-4 py-2 glass-card rounded-full">🚀 中彰花區域專屬代表</span>
-                </div>
-                <h1 class="hero-title text-4xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6 sm:mb-8 serif italic">
-                    Beyond <br> <span>Delivery.</span>
-                </h1>
-                <p class="text-gray-400 text-base sm:text-lg mb-8 sm:mb-12 max-w-sm leading-relaxed">
-                    我不只是業務。我運用 <span class="text-[#06C167] font-bold">數據美學</span> 與 <span class="text-[#06C167] font-bold">市場心理</span>，協助在地餐飲品牌實現數位躍遷。
-                </p>
-                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
-                    <button class="_blank" class="bg-[#06C167] text-black px-6 py-2 rounded-full font-bold text-sm">立即免費諮詢</button>
-                    <div class="text-xs tracking-widest text-gray-500 uppercase border-l-2 border-[#06C167] pl-4">
-                        台中 | 彰化 | 花蓮<br><span class="text-[#06C167]">✓ 官方認證顧問</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative group" data-aos="fade-left">
-                <div class="absolute -inset-1 bg-[#06C167] rounded-[45px] blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
-                <div class="relative glass-card overflow-hidden rounded-[45px]" style="height: 450px; background-image: linear-gradient(135deg, rgba(6,193,103,0.1) 0%, rgba(10,10,10,0.8) 100%);">
-                    <img src="https://i.postimg.cc/QKhwt7wM/Screenshot-20260506-003930-LINE-2.jpg" alt="Sunny Strategy Director" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6">
-                        <p class="text-2xl sm:text-3xl font-bold italic serif text-white">Sunny.</p>
-                        <p class="text-[#06C167] font-bold tracking-widest text-xs mt-2">🎯 STRATEGY DIRECTOR</p>
-                        <p class="text-gray-400 text-xs mt-2 leading-relaxed">Uber Eats 官方認證策略顧問，100+ 成功案例經驗</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-            <i class="fas fa-chevron-down text-[#06C167] text-xl"></i>
-        </div>
-    </section>
-
-    <!-- 核心統計 -->
-    <section class="py-16 sm:py-24 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 sm:gap-8">
-            <div class="glass-card p-8 text-center hover:scale-105 transition-transform" data-aos="fade-up">
-                <p class="counter-number" data-target="100">0</p>
-                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs mt-4">+ 合作店家</p>
-            </div>
-            <div class="glass-card p-8 text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
-                <p class="counter-number" data-target="350">0</p>
-                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs mt-4">% 平均成長</p>
-            </div>
-            <div class="glass-card p-8 text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
-                <p class="counter-number">24H</p>
-                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs mt-4">快速響應</p>
-            </div>
-            <div class="glass-card p-8 text-center hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
-                <p class="counter-number">5年+</p>
-                <p class="text-gray-400 font-bold uppercase tracking-widest text-xs mt-4">業界經驗</p>
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 class="hero-title text-5xl md:text-8xl font-black italic mb-8 uppercase tracking-tighter">
+            Beyond <br> <span class="text-[#06C167]">Delivery.</span>
+        </h1>
+        <div class="relative group cursor-pointer" onclick="document.getElementById('imgModal').classList.add('active')">
+             <div class="overflow-hidden rounded-[40px] border border-white/10 shadow-2xl" style="width: 300px; height: 420px;">
+                <img src="https://i.postimg.cc/QKhwt7wM/Screenshot-20260506-003930-LINE-2.jpg" alt="Sunny" class="w-full h-full object-cover">
             </div>
         </div>
     </section>
 
-    <!-- 服務介紹 -->
-    <section id="services" class="py-20 sm:py-32 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 serif">我提供的服務</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">從菜單優化到行銷策略，我提供完整的 Uber Eats 增長解決方案</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-10 hover:scale-105 transition-transform" data-aos="fade-right">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-2xl font-bold mb-4">菜單策略優化</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">運用數據分析，優化菜單結構、定價策略、照片呈現，提升轉化率與客單價。</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ 菜單結構分析</li>
-                        <li>✓ 定價心理學</li>
-                        <li>✓ 高質量商品照片指導</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-10 hover:scale-105 transition-transform" data-aos="fade-left" data-aos-delay="100">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-2xl font-bold mb-4">品牌定位與宣傳</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">打造獨特的品牌故事，設計吸睛的文案，實施精準的推廣策略。</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ 品牌故事打造</li>
-                        <li>✓ 文案撰寫指導</li>
-                        <li>✓ 推廣策略規劃</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-10 hover:scale-105 transition-transform" data-aos="fade-right" data-aos-delay="200">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h3 class="text-2xl font-bold mb-4">數據分析與報告</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">深入分析訂單數據，提供可行性建議，追蹤 KPI 進展。</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ 訂單數據分析</li>
-                        <li>✓ 月度報告</li>
-                        <li>✓ 改進建議</li>
-                    </ul>
-                </div>
-
-                <div class="glass-card p-10 hover:scale-105 transition-transform" data-aos="fade-left" data-aos-delay="300">
-                    <div class="text-4xl mb-4">👥</div>
-                    <h3 class="text-2xl font-bold mb-4">一對一顧問服務</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">24小時在線，解答所有疑問，提供個性化的成長方案。</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ 隨時答疑解惑</li>
-                        <li>✓ 危機處理指導</li>
-                        <li>✓ 長期成長規劃</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 成功案例 -->
-    <section id="cases" class="py-20 sm:py-32 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 serif">成功案例</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">真實的數據，真實的成長</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="case-item glass-card overflow-hidden h-80 bg-gradient-to-br from-[#06C167] to-[#0a0a0a]" data-aos="fade-up">
-                    <div class="absolute inset-0 bg-black/30"></div>
-                    <div class="relative w-full h-full flex items-center justify-center">
-                        <div class="text-center">
-                            <p class="text-5xl font-bold text-[#06C167] mb-2">320%</p>
-                            <p class="text-white font-bold">訂單量成長</p>
-                        </div>
-                    </div>
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">台中燒肉店</h3>
-                        <p class="text-sm text-gray-300 mb-3">3 個月從日均 20 單成長到 80 單</p>
-                        <p class="text-xs text-gray-400">✓ 菜單重構 ✓ 照片優化 ✓ 推廣策略</p>
-                    </div>
-                </div>
-
-                <div class="case-item glass-card overflow-hidden h-80 bg-gradient-to-br from-[#06C167] to-[#0a0a0a]" data-aos="fade-up" data-aos-delay="100">
-                    <div class="absolute inset-0 bg-black/30"></div>
-                    <div class="relative w-full h-full flex items-center justify-center">
-                        <div class="text-center">
-                            <p class="text-5xl font-bold text-[#06C167] mb-2">450%</p>
-                            <p class="text-white font-bold">客單價提升</p>
-                        </div>
-                    </div>
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">彰化便當店</h3>
-                        <p class="text-sm text-gray-300 mb-3">客單價從 $250 提升到 $1125</p>
-                        <p class="text-xs text-gray-400">✓ 定價優化 ✓ 組合銷售 ✓ 升級餐點</p>
-                    </div>
-                </div>
-
-                <div class="case-item glass-card overflow-hidden h-80 bg-gradient-to-br from-[#06C167] to-[#0a0a0a]" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute inset-0 bg-black/30"></div>
-                    <div class="relative w-full h-full flex items-center justify-center">
-                        <div class="text-center">
-                            <p class="text-5xl font-bold text-[#06C167] mb-2">5星好評</p>
-                            <p class="text-white font-bold">評分維持</p>
-                        </div>
-                    </div>
-                    <div class="case-overlay">
-                        <h3 class="text-xl font-bold mb-2">花蓮海鮮餐廳</h3>
-                        <p class="text-sm text-gray-300 mb-3">保持 4.9 星評分，訂單穩定增長</p>
-                        <p class="text-xs text-gray-400">✓ 品質管理 ✓ 客服指導 ✓ 評價回應</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 部落格 -->
-    <section id="blog" class="py-20 sm:py-32 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 serif">業界洞察 & 技巧</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">分享實用的 Uber Eats 增長技巧和行業趨勢</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="blog-card" data-aos="fade-up">
-                    <div class="text-4xl mb-4">📱</div>
-                    <h3 class="text-xl font-bold mb-3">照片策略：為什麼第一張很重要</h3>
-                    <p class="text-gray-400 text-sm mb-4">研究表明，高質量的菜品照片可以提升 40% 的點擊率。了解如何拍攝吸引人的美食照片。</p>
-                    <div class="text-xs text-[#06C167] font-bold cursor-pointer hover:text-[#05a856]">閱讀更多 →</div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl mb-4">💰</div>
-                    <h3 class="text-xl font-bold mb-3">定價心理學：客單價翻倍的秘訣</h3>
-                    <p class="text-gray-400 text-sm mb-4">不是簡單的漲價。了解如何通過心理定價法則，在不流失客戶的情況下提升營收。</p>
-                    <div class="text-xs text-[#06C167] font-bold cursor-pointer hover:text-[#05a856]">閱讀更多 →</div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">⭐</div>
-                    <h3 class="text-xl font-bold mb-3">評論管理：如何維持高分和信譽</h3>
-                    <p class="text-gray-400 text-sm mb-4">負面評論不可怕，關鍵是如何正確回應。學習專業的評論管理技巧。</p>
-                    <div class="text-xs text-[#06C167] font-bold cursor-pointer hover:text-[#05a856]">閱讀更多 →</div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl mb-4">🎁</div>
-                    <h3 class="text-xl font-bold mb-3">促銷策略：如何設計有效的優惠</h3>
-                    <p class="text-gray-400 text-sm mb-4">每個優惠都可能虧本，也可能是最好的投資。掌握數據驅動的促銷方法。</p>
-                    <div class="text-xs text-[#06C167] font-bold cursor-pointer hover:text-[#05a856]">閱讀更多 →</div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-3">2026 年外送平台趨勢分析</h3>
-                    <p class="text-gray-400 text-sm mb-4">AI 定價、個性化推薦、社群銷售——了解今年改變餐飲業的新機會。</p>
-                    <div class="text-xs text-[#06C167] font-bold cursor-pointer hover:text-[#05a856]">閱讀更多 →</div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl font-bold mb-3">從零到月入 10 萬：新店成長路線圖</h3>
-                    <p class="text-gray-400 text-sm mb-4">新開店面的第一 90 天最關鍵。詳細的逐月成長計畫和執行清單。</p>
-                    <div class="text-xs text-[#06C167] font-bold cursor-pointer hover:text-[#05a856]">閱讀更多 →</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 聯絡表單 -->
-    <section id="contact" class="py-20 sm:py-32 px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto" data-aos="zoom-in">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 serif">立即開始</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">填寫表單，我會在 24 小時內聯絡您進行免費診斷</p>
-            </div>
-
-            <div class="glass-card p-12">
-                <form id="contactForm" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-bold mb-2">店家名稱 *</label>
-                            <input type="text" name="storeName" class="form-input w-full" placeholder="例：小明燒肉店" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold mb-2">您的姓名 *</label>
-                            <input type="text" name="name" class="form-input w-full" placeholder="例：小明" required>
-                        </div>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-bold mb-2">電話號碼 *</label>
-                            <input type="tel" name="phone" class="form-input w-full" placeholder="09XX-XXX-XXX" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold mb-2">電子郵件</label>
-                            <input type="email" name="email" class="form-input w-full" placeholder="your@email.com">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-bold mb-2">服務地區 *</label>
-                        <select name="region" class="form-input w-full" required>
-                            <option value="">請選擇</option>
-                            <option value="台中">台中</option>
-                            <option value="彰化">彰化</option>
-                            <option value="花蓮">花蓮</option>
-                            <option value="其他">其他</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-bold mb-2">您最關心的問題 *</label>
-                        <textarea name="question" class="form-input w-full h-24 resize-none" placeholder="例：如何提升訂單量？" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary w-full py-4 text-lg font-bold">提交諮詢申請</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- 推薦理由 -->
-    <section class="py-20 sm:py-32 px-4 sm:px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-4 serif">為什麼選擇我？</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card p-8 hover:scale-105 transition-transform" data-aos="fade-up">
-                    <div class="text-5xl mb-4">🔐</div>
-                    <h3 class="text-2xl font-bold mb-4">官方認證</h3>
-                    <p class="text-gray-400">Uber Eats 官方認可的策略顧問，信譽有保障。</p>
-                </div>
-
-                <div class="glass-card p-8 hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-5xl mb-4">📊</div>
-                    <h3 class="text-2xl font-bold mb-4">數據驅動</h3>
-                    <p class="text-gray-400">每項建議都基於真實數據分析，不靠猜測。</p>
-                </div>
-
-                <div class="glass-card p-8 hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-5xl mb-4">⚡</div>
-                    <h3 class="text-2xl font-bold mb-4">快速見效</h3>
-                    <p class="text-gray-400">平均 30 天內看到明顯成長，有些店家甚至 7 天內翻倍。</p>
-                </div>
-
-                <div class="glass-card p-8 hover:scale-105 transition-transform" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-5xl mb-4">🎁</div>
-                    <h3 class="text-2xl font-bold mb-4">客製化方案</h3>
-                    <p class="text-gray-400">根據您的店家特色設計策略，不是千篇一律。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 浮動聯絡按鈕 -->
-    <div class="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
-        <a href="https://www.instagram.com/sunny.07.04/" target="_blank" rel="noopener noreferrer" class="w-14 h-14 glass-card flex items-center justify-center rounded-full text-white hover:text-pink-500 transition-all hover:scale-110 shadow-xl" title="Follow on Instagram">
-            <i class="fa-brands fa-instagram text-2xl"></i>
+    <div class="fixed bottom-10 right-10 z-50">
+        <a href="https://line.me/ti/p/xd__vmNemf" target="_blank" class="chatbot-toggle">
+            <i class="fa-brands fa-line text-4xl text-white"></i>
         </a>
-        <a href="https://line.me/ti/p/xd__vmNemf" target="_blank" rel="noopener noreferrer" class="w-16 h-16 bg-[#06C755] rounded-full flex items-center justify-center text-white line-float shadow-2xl hover:scale-110 transition-transform" title="Chat on LINE">
-            <i class="fa-brands fa-line text-4xl"></i>
-        </a>
-        <button id="chatbotBtn" class="chatbot-toggle w-16 h-16 flex items-center justify-center text-white shadow-2xl border-none cursor-pointer rounded-full" title="Open Chat">
-            <i class="fas fa-comments text-2xl"></i>
-        </button>
     </div>
 
-    <!-- 聯絡模態框 -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold serif">免費諮詢</h2>
-                <button class="text-2xl cursor-pointer close-modal">&times;</button>
-            </div>
-            <form id="modalContactForm" class="space-y-4">
-                <input type="text" name="storeName" class="form-input w-full" placeholder="店家名稱" required>
-                <input type="text" name="name" class="form-input w-full" placeholder="您的姓名" required>
-                <input type="tel" name="phone" class="form-input w-full" placeholder="電話號碼" required>
-                <textarea name="message" class="form-input w-full h-20 resize-none" placeholder="簡要說明您的需求" required></textarea>
-                <button type="submit" class="btn-primary w-full py-3">立即提交</button>
-            </form>
+    <div id="imgModal" class="modal" onclick="this.classList.remove('active')">
+        <div class="modal-content text-center">
+            <img src="https://i.postimg.cc/QKhwt7wM/Screenshot-20260506-003930-LINE-2.jpg" class="rounded-2xl mb-6 w-full">
+            <button class="bg-[#06C167] text-black px-8 py-3 rounded-full font-bold">關閉視窗</button>
         </div>
     </div>
 
-    <!-- Chatbot -->
-    <div id="chatbot" class="fixed bottom-32 right-6 z-[99] glass-card rounded-3xl w-80 shadow-2xl hidden flex-col max-h-96" style="display: none;">
-        <div class="bg-gradient-to-r from-[#06C167] to-[#00a84f] p-6 rounded-t-3xl flex justify-between items-center">
-            <h3 class="text-white font-bold text-lg">Sunny 助手</h3>
-            <button class="text-white text-2xl close-chatbot">&times;</button>
-        </div>
-        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 max-h-64">
-            <div class="bg-gray-700 rounded-lg p-3 text-sm w-fit max-w-xs">
-                👋 你好！有什麼我可以幫助的嗎？
-            </div>
-        </div>
-        <div class="p-4 border-t border-gray-700 flex gap-2">
-            <input type="text" id="chatInput" class="form-input flex-1" placeholder="輸入訊息...">
-            <button class="btn-primary px-4 py-2" onclick="sendChatMessage()">送出</button>
-        </div>
-    </div>
-
-    <!-- 頁腳 -->
-    <footer class="py-16 sm:py-20 border-t border-white/5 text-center px-4">
-        <p class="serif italic text-2xl sm:text-3xl mb-8">Ready to grow?</p>
-        
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-                <p class="font-bold mb-4">📞 直接聯絡</p>
-                <a href="tel:0902697331" class="text-[#06C167] hover:underline">0902-697-331</a>
-            </div>
-            <div>
-                <p class="font-bold mb-4">💬 社交媒體</p>
-                <a href="https://www.instagram.com/sunny.07.04/" class="text-[#06C167] hover:underline">INSTAGRAM</a>
-            </div>
-            <div>
-                <p class="font-bold mb-4">📍 服務地區</p>
-                <p class="text-gray-500">台中 | 彰化 | 花蓮</p>
-            </div>
-        </div>
-
-        <div class="border-t border-white/10 pt-8">
-            <p class="text-[10px] tracking-[0.3em] text-gray-600">© 2026 SUNNY CONSULTING. ALL RIGHTS RESERVED.</p>
-            <p class="text-[10px] tracking-[0.3em] text-gray-600 mt-2">DESIGNED WITH ❤️ FOR GROWTH</p>
-        </div>
-    </footer>
-
-    <!-- 腳本 -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    
-    <script>
-        // ===== 初始化 =====
-        AOS.init({ duration: 1000, once: true, offset: 100 });
-
-        // ===== 主題切換 =====
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        html.setAttribute('data-theme', savedTheme);
-        if (savedTheme === 'light') {
-            themeToggle.classList.add('active');
-            themeToggle.querySelector('span').innerHTML = '<i class="fas fa-sun text-xs"></i>';
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.classList.toggle('active');
-            themeToggle.querySelector('span').innerHTML = newTheme === 'light' 
-                ? '<i class="fas fa-sun text-xs"></i>' 
-                : '<i class="fas fa-moon text-xs"></i>';
-        });
-
-        // ===== 導航欄滾動效果 =====
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // ===== 計數器動畫 =====
-        const animateCounter = (element, target) => {
-            let current = 0;
-            const increment = target / 50;
-            const interval = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(interval);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 30);
-        };
-
-        const observerOptions = { threshold: 0.5 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                    entry.target.classList.add('animated');
-                    const target = parseInt(entry.target.dataset.target);
-                    animateCounter(entry.target, target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.counter-number[data-target]').forEach(counter => observer.observe(counter));
-
-        // ===== 聯絡表單模態框 =====
-        const contactModal = document.getElementById('contactModal');
-        const openContactBtn = document.querySelector('.open-contact-modal');
-        const primaryBtns = document.querySelectorAll('.btn-primary');
-        const closeModalBtns = document.querySelectorAll('.close-modal');
-
-        openContactBtn?.addEventListener('click', () => {
-            contactModal.classList.add('active');
-        });
-
-        primaryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (btn.classList.contains('open-contact-modal') === false) {
-                    window.open('https://line.me/ti/p/xd__vmNemf', '_blank');
-                }
-            });
-        });
-
-        closeModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                contactModal.classList.remove('active');
-            });
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === contactModal) {
-                contactModal.classList.remove('active');
-            }
-        });
-
-        // ===== 表單提交 =====
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('感謝您的諮詢！我們會在 24 小時內聯絡您。');
-            e.target.reset();
-        });
-
-        document.getElementById('modalContactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('感謝您的諮詢！我們會盡快聯絡您。');
-            e.target.reset();
-            contactModal.classList.remove('active');
-        });
-
-        // ===== Chatbot =====
-        const chatbot = document.getElementById('chatbot');
-        const chatbotBtn = document.getElementById('chatbotBtn');
-        const closeChatbotBtn = document.querySelector('.close-chatbot');
-
-        const responses = [
-            "您好！請問有什麼我可以幫助的嗎？",
-            "我可以幫助您解答 Uber Eats 相關的問題。",
-            "要預約免費諮詢嗎？",
-            "我們提供菜單優化、品牌定位、數據分析等服務。",
-            "24 小時都在線為您服務！"
-        ];
-
-        chatbotBtn.addEventListener('click', () => {
-            chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
-        });
-
-        closeChatbotBtn.addEventListener('click', () => {
-            chatbot.style.display = 'none';
-        });
-
-        window.sendChatMessage = () => {
-            const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            if (!message) return;
-
-            const messagesDiv = document.getElementById('chatMessages');
-            const userMsg = document.createElement('div');
-            userMsg.className = 'bg-[#06C167] rounded-lg p-3 text-sm w-fit max-w-xs ml-auto';
-            userMsg.textContent = message;
-            messagesDiv.appendChild(userMsg);
-
-            setTimeout(() => {
-                const botMsg = document.createElement('div');
-                botMsg.className = 'bg-gray-700 rounded-lg p-3 text-sm w-fit max-w-xs';
-                botMsg.textContent = responses[Math.floor(Math.random() * responses.length)];
-                messagesDiv.appendChild(botMsg);
-                messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }, 500);
-
-            input.value = '';
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
-        };
-
-        document.getElementById('chatInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                window.sendChatMessage();
-            }
-        });
-
-        // ===== 平滑捲動導航 =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
+   
+                                                
+
+            
+    
+        
